@@ -82,6 +82,7 @@ function rh_wp_mail_from() {
 add_filter( 'wp_mail_from', 'rh_wp_mail_from' );
 
 function rh_wp_mail_from_name() {
-	return 'Press Bot';
+	$parts = parse_url( get_site_url() );
+	return 'WordPress (' . $parts['host'] . ')';
 }
 add_filter( 'wp_mail_from_name', 'rh_wp_mail_from_name' );
