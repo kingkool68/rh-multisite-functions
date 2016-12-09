@@ -74,3 +74,14 @@ function rh_is_dev() {
 	}
 	return false;
 }
+
+/* Custom WP Mail Sending */
+function rh_wp_mail_from() {
+	return 'wordpress@russellheimlich.com';
+}
+add_filter( 'wp_mail_from', 'rh_wp_mail_from' );
+
+function rh_wp_mail_from_name() {
+	return 'Press Bot';
+}
+add_filter( 'wp_mail_from_name', 'rh_wp_mail_from_name' );
